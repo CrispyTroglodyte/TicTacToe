@@ -1,0 +1,164 @@
+
+body{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient( 135deg, #D9B48F, #ECB176 );
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+
+}
+
+#game-container{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#game-board{
+
+    display: grid;
+    grid-template-columns: repeat( 3, 100px );
+    grid-template-rows: repeat( 3, 100px );
+    gap: 5px;
+    background: linear-gradient( 135deg, #C8A58B, #F8F1E4 );
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0 0 10px rgba( 0, 0, 0, 0.2 );
+
+}
+
+.cell{
+
+    width: 100px;
+    height: 100px;
+    background: #F8F1E4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+    border: 2px solid #8A5C42;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+
+}
+
+.cell:hover{
+
+    background: #E7D9C4;
+
+}
+
+.cell.clicked{
+
+    transform: scale( 1.1 );
+
+}
+
+#restart-btn{
+
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #8A5C42;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+}
+
+#restart-btn:hover{
+
+    background-color: #6F4F28;
+
+}
+
+#scoreboard{
+
+    margin-top: 20px;
+    text-align: center;
+
+}
+
+#scoreboard p{
+
+    margin: 5px 0;
+
+}
+
+#theme-btn{
+
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #8A5C42;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+}
+
+#theme-btn:hover{
+
+    background-color: #6F4F28;
+
+}
+
+.dark-theme{
+
+    background: linear-gradient( 135deg, #4E3A2B, #8A5C42 );
+
+}
+
+.dark-theme #game-board{
+
+    background: linear-gradient( 135deg, #5B3A29, #7A5B4C );
+
+}
+
+.dark-theme .cell{
+
+    background: #7A5B4C;
+    border: 2px solid #4E3A2B;
+
+}
+
+.dark-theme #restart-btn, .dark-theme #theme-btn{
+
+    background-color: #4E3A2B;
+
+}
+
+.dark-theme #restart-btn:hover, .dark-theme #theme-btn:hover{
+
+    background-color: #3B2B1E;
+
+}
+
+@media ( max-width: 600px ){
+
+    #game-board{
+
+        grid-template-columns: repeat( 3, 80px );
+        grid-template-rows: repeat( 3, 80px );
+
+    }
+
+    .cell{
+
+        width: 80px;
+        height: 80px;
+        font-size: 1.5em;
+
+    }
+
+}
